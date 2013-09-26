@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
 	unsigned int eax,ebx,ecx,edx,esi,edi;
 
 	if (argc != 2) {
-		printf("Usage: %s <url>\n");
-		exit(1);
+		printf("Usage: %s <url>\n", argv[0]);
+		return 1;
 	}
 
 	if (!strncmp(argv[1],"http://",7))
@@ -110,6 +110,7 @@ int main(int argc, char *argv[])
 	case 1:
 		edx = edx + (string[i]);
 	case 0:
+		break;
 	}
 
 	edx = (edx - edi - esi) ^ (esi >> 0x0D);
